@@ -6,7 +6,7 @@ atom-text-editor {
   color: @syntax-text-color;
 
   .line.cursor-line {
-    background-color: @syntax-cursor-line;
+    background-color: #000; // @syntax-cursor-line;
   }
 
   .invisible {
@@ -59,7 +59,7 @@ atom-text-editor {
   }
 
   .wrap-guide {
-    background-color: @syntax-wrap-guide-color;
+    background-color: fadeout( @hue-6, 75% ); // @syntax-wrap-guide-color;
   }
 
   // find + replace
@@ -87,7 +87,7 @@ atom-text-editor {
 
       &.cursor-line {
         color: @hue-2; // @syntax-gutter-text-color-selected;
-        background-color: transparent; // @syntax-gutter-background-color-selected;
+        background-color: #000; // @syntax-gutter-background-color-selected;
       }
       &.cursor-line-no-selection {
         background-color: transparent;
