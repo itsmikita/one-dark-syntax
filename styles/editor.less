@@ -13,17 +13,41 @@ atom-text-editor {
     color: @syntax-text-color;
   }
 
-  .cursor {
-    border-left: 2px solid @syntax-cursor-color;
+  // .cursor {
+  //   border-left: 2px solid @syntax-cursor-color;
+  // }
+
+  .cursors {
+    mix-blend-mode: exclusion;
+
+    // Block-style cursor
+    .cursor {
+      background-color: @hue-2;
+      mix-blend-mode: exclusion !important;
+      border-left: none;
+      // border-radius: @ui-border-radius;
+      // border-left-width: 2px;
+    }
   }
 
   .selection .region {
-    background-color: @syntax-selection-color;
+    background-color: fadeout( @hue-2, 25% );
+    // border-radius: @ui-border-radius;
+    // background-blend-mode: exclusion;
+    mix-blend-mode: exclusion;
   }
+  // .selection .region {
+  //   background-color: @hue-2; // @syntax-selection-color;
+  // }
 
   .bracket-matcher .region {
-    border-bottom: 1px solid @syntax-cursor-color;
-    box-sizing: border-box;
+    // border-bottom: 1px solid @syntax-cursor-color;
+    // box-sizing: border-box;
+    background-color: fadeout( @hue-6-2, 75% ); // @color-highlight; // fadeout( @color-highlight, 5% );
+    border: none;
+    // border-radius: @ui-border-radius;
+    // background-blend-mode: exclusion;
+    mix-blend-mode: exclusion;
   }
 
   .invisible-character {
@@ -31,7 +55,7 @@ atom-text-editor {
   }
 
   .indent-guide {
-    color: @syntax-indent-guide-color;
+    color: fadeout( @hue-1, 75% ); // @syntax-indent-guide-color;
   }
 
   .wrap-guide {
@@ -41,27 +65,29 @@ atom-text-editor {
   // find + replace
   .find-result .region.region.region,
   .current-result .region.region.region {
-    border-radius: 2px;
-    background-color: @syntax-result-marker-color;
+    // border-radius: 2px;
+    // background-color: @syntax-result-marker-color;
+    background-color: fadeout( @hue-4, 25% ); // @syntax-result-marker-color;
     transition: border-color .4s;
   }
   .find-result .region.region.region {
     border: 2px solid transparent;
   }
   .current-result .region.region.region {
-    border: 2px solid @syntax-result-marker-color-selected;
-    transition-duration: .1s;
+    border: 0; // 5px solid @syntax-result-marker-color-selected;
+    // border-radius: 4px;
+    transition-duration: .3s;
   }
 
   .gutter {
 
     .line-number {
       color: @syntax-gutter-text-color;
-      -webkit-font-smoothing: antialiased;
+      // -webkit-font-smoothing: antialiased;
 
       &.cursor-line {
-        color: @syntax-gutter-text-color-selected;
-        background-color: @syntax-gutter-background-color-selected;
+        color: @hue-2; // @syntax-gutter-text-color-selected;
+        background-color: transparent; // @syntax-gutter-background-color-selected;
       }
       &.cursor-line-no-selection {
         background-color: transparent;
