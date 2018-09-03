@@ -1,53 +1,52 @@
+// Editor styles
 
-// Editor styles (background, gutter, guides)
+@keyframes bounce-once {
+  0% {
+    transform: scale( 1.0 ) translate3d( 0, 0, 0 );
+  }
+  50% {
+    transform: scale( 1.5 ) translate3d( 0, 0, 0 );
+  }
+}
 
 atom-text-editor {
   background-color: @syntax-background-color;
   color: @syntax-text-color;
+  -webkit-font-smoothing: grayscale;
+
 
   .line.cursor-line {
-    background-color: #000; // @syntax-cursor-line;
+    // background-color: #000;
+    // mix-blend-mode: color-dodge;
   }
 
   .invisible {
     color: @syntax-text-color;
   }
 
-  // .cursor {
-  //   border-left: 2px solid @syntax-cursor-color;
-  // }
-
   .cursors {
-    mix-blend-mode: exclusion;
+    mix-blend-mode: color-dodge;
 
-    // Block-style cursor
     .cursor {
       background-color: @hue-2;
-      mix-blend-mode: exclusion !important;
       border-left: none;
-      // border-radius: @ui-border-radius;
-      // border-left-width: 2px;
     }
   }
 
-  .selection .region {
-    background-color: fadeout( @hue-2, 25% );
-    // border-radius: @ui-border-radius;
-    // background-blend-mode: exclusion;
-    mix-blend-mode: exclusion;
+  .selection {
+    mix-blend-mode: color-dodge;
+    .region {
+      background-color: fadeout( @hue-2, 25% );
+    }
   }
-  // .selection .region {
-  //   background-color: @hue-2; // @syntax-selection-color;
-  // }
 
-  .bracket-matcher .region {
-    // border-bottom: 1px solid @syntax-cursor-color;
-    // box-sizing: border-box;
-    background-color: fadeout( @hue-6-2, 75% ); // @color-highlight; // fadeout( @color-highlight, 5% );
-    border: none;
-    // border-radius: @ui-border-radius;
-    // background-blend-mode: exclusion;
-    mix-blend-mode: exclusion;
+  .bracket-matcher {
+    mix-blend-mode: color-dodge;
+    .region {
+      background-color: fadeout( @hue-6-2, 25% ); // @color-highlight;
+      border: none;
+      animation: bounce-once 150ms linear;
+    }
   }
 
   .invisible-character {
@@ -59,38 +58,40 @@ atom-text-editor {
   }
 
   .wrap-guide {
-    background-color: fadeout( @hue-6, 75% ); // @syntax-wrap-guide-color;
+    background-color: @hue-6; // @syntax-wrap-guide-color;
   }
 
   // find + replace
   .find-result .region.region.region,
   .current-result .region.region.region {
-    // border-radius: 2px;
-    // background-color: @syntax-result-marker-color;
-    background-color: fadeout( @hue-4, 25% ); // @syntax-result-marker-color;
-    transition: border-color .4s;
+    background-color: fadeout( @hue-4, 25% );
   }
-  .find-result .region.region.region {
-    border: 2px solid transparent;
+  .find-result {
+    mix-blend-mode: color-color-dodge;
+    .region.region.region {
+      border: 2px solid transparent;
+    }
   }
-  .current-result .region.region.region {
-    border: 0; // 5px solid @syntax-result-marker-color-selected;
-    // border-radius: 4px;
-    transition-duration: .3s;
+  .current-result {
+    mix-blend-mode: color-color-dodge;
+    .region.region.region {
+      border: 0; // 5px solid @syntax-result-marker-color-selected;
+      animation: bounce-once 150ms linear;
+      -webkit-backface-visibility: hidden; // Fixes flickering while animation
+    }
   }
 
   .gutter {
 
     .line-number {
       color: @syntax-gutter-text-color;
-      // -webkit-font-smoothing: antialiased;
 
       &.cursor-line {
         color: @hue-2; // @syntax-gutter-text-color-selected;
-        background-color: #000; // @syntax-gutter-background-color-selected;
+        background-color: transparent; // @syntax-gutter-background-color-selected;
       }
       &.cursor-line-no-selection {
-        background-color: transparent;
+        background-color: fadeout( #000, 50% );
       }
 
       .icon-right {
