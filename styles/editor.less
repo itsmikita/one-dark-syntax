@@ -35,6 +35,7 @@ atom-text-editor {
 
   .selection {
     mix-blend-mode: color-dodge;
+
     .region {
       background-color: fadeout( @hue-2, 25% );
     }
@@ -42,10 +43,13 @@ atom-text-editor {
 
   .bracket-matcher {
     mix-blend-mode: color-dodge;
+
     .region {
-      background-color: fadeout( @hue-6-2, 25% ); // @color-highlight;
+      //background-color: fadeout( @hue-6-2, 50% ); // @color-highlight;
+      background-color: @hue-4;
       border: none;
-      animation: bounce-once 150ms linear;
+      opacity: 0.5;
+      // animation: bounce-once 150ms linear;
     }
   }
 
@@ -54,11 +58,11 @@ atom-text-editor {
   }
 
   .indent-guide {
-    color: fadeout( @hue-1, 75% ); // @syntax-indent-guide-color;
+    color: fadeout( @hue-2, 87% ); // @syntax-indent-guide-color;
   }
 
   .wrap-guide {
-    background-color: @hue-6; // @syntax-wrap-guide-color;
+    background-color: fadeout( @hue-5, 87% ); // @syntax-wrap-guide-color;
   }
 
   // find + replace
@@ -67,16 +71,18 @@ atom-text-editor {
     background-color: fadeout( @hue-4, 25% );
   }
   .find-result {
-    mix-blend-mode: color-color-dodge;
+    mix-blend-mode: color-dodge;
+
     .region.region.region {
       border: 2px solid transparent;
     }
   }
   .current-result {
-    mix-blend-mode: color-color-dodge;
+    mix-blend-mode: color-dodge;
+
     .region.region.region {
       border: 0; // 5px solid @syntax-result-marker-color-selected;
-      animation: bounce-once 150ms linear;
+      // animation: bounce-once 150ms linear;
       -webkit-backface-visibility: hidden; // Fixes flickering while animation
     }
   }
@@ -87,7 +93,7 @@ atom-text-editor {
       color: @syntax-gutter-text-color;
 
       &.cursor-line {
-        color: @hue-2; // @syntax-gutter-text-color-selected;
+        color: white; // @hue-1; // @syntax-gutter-text-color-selected;
         background-color: transparent; // @syntax-gutter-background-color-selected;
       }
       &.cursor-line-no-selection {
