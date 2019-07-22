@@ -13,12 +13,14 @@ atom-text-editor {
   background-color: @syntax-background-color;
   color: @syntax-text-color;
   -webkit-font-smoothing: auto;
-  font-family: "SF Mono";
+  font-variant-numeric: slashed-zero;
+  font-family: "Sklad Mono";
+
 
 
   .line.cursor-line {
-    // background-color: #000;
-    // mix-blend-mode: color-dodge;
+    background-color: fadeout( @hue-1, 95% );
+    mix-blend-mode: color-dodge;
   }
 
   .invisible {
@@ -31,6 +33,7 @@ atom-text-editor {
     .cursor {
       background-color: @hue-2;
       border-left: none;
+      z-index: 99999;
     }
   }
 
@@ -59,17 +62,17 @@ atom-text-editor {
   }
 
   .indent-guide {
-    color: fadeout( @hue-2, 87% ); // @syntax-indent-guide-color;
+    color: fadeout( @hue-2, 78% ); // @syntax-indent-guide-color;
   }
 
   .wrap-guide {
-    background-color: fadeout( @hue-5, 87% ); // @syntax-wrap-guide-color;
+    background-color: fadeout( @hue-5, 78% ); // @syntax-wrap-guide-color;
   }
 
   // find + replace
   .find-result .region.region.region,
   .current-result .region.region.region {
-    background-color: fadeout( @hue-4, 25% );
+    background-color: fadeout( @hue-4, 78% );
   }
   .find-result {
     mix-blend-mode: color-dodge;
@@ -98,7 +101,7 @@ atom-text-editor {
         background-color: transparent; // @syntax-gutter-background-color-selected;
       }
       &.cursor-line-no-selection {
-        background-color: fadeout( #000, 50% );
+        background-color: fadeout( #000, 78% );
       }
 
       .icon-right {
