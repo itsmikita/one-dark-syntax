@@ -19,7 +19,7 @@ atom-text-editor {
 
 
   .line.cursor-line {
-    background-color: fadeout( @hue-1, 95% );
+    // background-color: fadeout( @hue-1, 95% );
     mix-blend-mode: color-dodge;
   }
 
@@ -41,7 +41,7 @@ atom-text-editor {
     mix-blend-mode: color-dodge;
 
     .region {
-      background-color: fadeout( @hue-2, 25% );
+      background-color: fadeout( @hue-2, 75% );
     }
   }
 
@@ -87,7 +87,7 @@ atom-text-editor {
     .region.region.region {
       border: 0; // 5px solid @syntax-result-marker-color-selected;
       // animation: bounce-once 150ms linear;
-      -webkit-backface-visibility: hidden; // Fixes flickering while animation
+      // -webkit-backface-visibility: hidden; // Fixes flickering while animation
     }
   }
 
@@ -98,10 +98,10 @@ atom-text-editor {
 
       &.cursor-line {
         color: white; // @hue-1; // @syntax-gutter-text-color-selected;
-        background-color: transparent; // @syntax-gutter-background-color-selected;
+        // background-color: transparent; // @syntax-gutter-background-color-selected;
       }
       &.cursor-line-no-selection {
-        background-color: fadeout( #000, 78% );
+        // background-color: fadeout( #000, 78% );
       }
 
       .icon-right {
