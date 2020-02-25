@@ -7,28 +7,25 @@
 @syntax-saturation:   0%;
 @syntax-brightness:   15%;
 
-
 // Monochrome -----------------------------------
-@mono-1: hsl(@syntax-hue, 14%, 71%); // default text
-@mono-2: hsl(@syntax-hue,  9%, 55%);
-@mono-3: hsl(@syntax-hue, 10%, 40%);
+@mono-1: hsl( 0, 0%, 87% ); // hsl(@syntax-hue, 14%, 71%); // default text
+@mono-2: hsl( 0, 0%, 71% ); // hsl(@syntax-hue,  9%, 55%);
+@mono-3: hsl( 0, 0%, 63% ); // hsl(@syntax-hue, 10%, 40%);
 
 // Colors -----------------------------------
-@hue-1:   #5AC8FA; // hsl(187, 47%, 55%); // <-cyan
-@hue-2:   #706FDC; // hsl(207, 82%, 66%); // <-blue
-@hue-3:   #5856D6; // hsl(286, 60%, 67%); // <-purple
-@hue-4:   #4CD964; // hsl( 95, 38%, 62%); // <-green
-
-@hue-5:   #FF3B30; // hsl(355, 65%, 65%); // <-red 1
-@hue-5-2: #FF3B30; // hsl(  5, 48%, 51%); // <-red 2
-
-@hue-6:   #FF9501; // hsl( 29, 54%, 61%); // <-orange 1
-@hue-6-2: #FE9502; // hsl( 39, 67%, 69%); // <-orange 2
+@hue-1:   hsl( 240, 2%, 60% ); // Grey
+@hue-2:   hsl( 211, 100%, 50% ); // Blue
+@hue-3:   hsl( 280, 85%, 65% ); // Purple
+@hue-4:   hsl( 130, 67%, 52% ); // Green
+@hue-5:   hsl( 347, 97%, 55% ); // Pink
+@hue-5-2: hsl( 4, 100%, 61% ); // Red
+@hue-6:   hsl( 36, 100%, 52% ); // Orange
+@hue-6-2: hsl( 50, 100%, 52% ); // Yellow
 
 
 // Base colors -----------------------------------
 @syntax-fg:     @mono-1;
-@syntax-bg:     #111; // hsl(@syntax-hue, @syntax-saturation, @syntax-brightness);
-@syntax-gutter: darken(@syntax-fg, 26%);
-@syntax-guide:  fade(@syntax-fg, 15%);
-@syntax-accent: hsl(@syntax-hue, 100%, 66% );
+@syntax-bg:     hsl( 0, 0%, 9% ); // hsl(@syntax-hue, @syntax-saturation, @syntax-brightness);
+@syntax-gutter: hsl( 0, 0%, 33% ); // darken(@syntax-fg, 26%);
+@syntax-guide:  @hue-6; // fade( @syntax-fg, 15% );
+@syntax-accent: @hue-2; // hsl( @syntax-hue, 100%, 66% );
